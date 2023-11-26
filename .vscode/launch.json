@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "name": "Clang 디버그 테스트",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/clang테스트",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: clang++ build active file"
+        },
+        {
+            "name": "SIMD 스레딩",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": ["${fileDirname}/lineitem.tbl"],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "SIMD 스레딩"
+        },
+    ],
+    "version": "2.0.0"
+}

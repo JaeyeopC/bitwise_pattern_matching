@@ -1,0 +1,30 @@
+stages:
+    - test
+
+test:
+    stage: test
+    script: 
+        - mkdir -p build/debug
+        - cd build/debug
+        - cmake -DCMAKE_BUILD_TYPE=Debug ../..
+        - make -j8
+        - ./test_all
+    cache:
+        key: "$CI_JOB_STAGE-$CI_COMMIT_REF_NAME"
+        paths:
+            - build/debug
+        policy: pull-push
+    tags:
+        - "fdedi"
+
+clear_cache_test:
+    stage: test
+    script:
+        - rm -rf ./build/*
+    cache:
+        key: "$CI_JOB_STAGE-$CI_COMMIT_REF_NAME"
+        paths:
+            - build/
+        policy: pull-push
+    when: manual
+    allow_failure: true
