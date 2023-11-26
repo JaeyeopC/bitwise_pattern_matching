@@ -1,3 +1,4 @@
+# bitwise mapping  
 Mapping the program virtual address to the address specified as data.    
 Pointer to the file will read 8 Byte per operation. ( 64bit CPU )   
 
