@@ -3,7 +3,7 @@ Mapping the program virtual address to the address specified as data.
 Pointer to the file will read 8 Byte per operation. ( 64bit CPU )   
 
 high : 0x8080808080808080 is used to find the position of the matched pattern.     
-low : 0x7F7F7F7F7F7F7F7F is to set the highest bit for not mathced characters
+low : 0x7F7F7F7F7F7F7F7F is to set the highest bit for not mathced characters.  
 (~block)&high : to filter out non-ascii charaters ( ascii characters range from 0 to 127, 0111 1111 ).  
 (block&low)^pattern : sets the matched bit 0 ( 0000 0000 ), while considering that the block is all ascii code.  
 ((block&low)^pattern) + low : sets the high bit for not matched characters.  
