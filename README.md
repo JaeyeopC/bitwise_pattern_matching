@@ -1,4 +1,4 @@
-# 1. bitwise mapping  
+### bitwise mapping technique
 Mapping the program virtual address to the address specified as data.    
 Pointer to the file will read 8 Byte per operation. ( 64bit CPU )   
 
@@ -15,13 +15,8 @@ memory order : low memory - LSB c b a MSB - high memory
 it comes as like this in binary : 0110 0003 / 0110 0002 / 0110 0001.  
 Thus uint64_t pos = __builtin_ctzll(match) / 8; gives the position from the beginning of each byte of the line read instead of from the end.  
 
-# 2. Thread 
-# 3. SIMD ( Intel 64 & ARM )
 
-
-
-
-## Build
+### Build
 A configuration file is provided to build this project with CMake.
 This allows you to build the project in the terminal but also
 provides the option to use Jetbrains CLion or Microsoft Visual Studio
